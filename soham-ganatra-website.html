@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soham Ganatra — Independent Director Aspirant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1917;
+    --ink-mid: #4a4845;
+    --ink-light: #8a8880;
+    --ink-faint: #c8c6c0;
+    --paper: #faf9f6;
+    --paper-warm: #f2f0ea;
+    --paper-card: #ffffff;
+    --accent: #2d4a3e;
+    --accent-light: #e8f0ec;
+    --accent-mid: #4a7a65;
+    --rule: rgba(26,25,23,0.1);
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,249,246,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 max(2rem, calc(50% - 560px));
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; font-weight: 400; }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* LAYOUT */
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 6rem 0; }
+  section:nth-child(even) { background: var(--paper-warm); }
+
+  /* HERO */
+  #hero {
+    min-height: 92vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem max(2rem, calc(50% - 560px));
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--accent-mid); font-weight: 500; margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--accent-mid); display: block; }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name em { font-style: italic; color: var(--accent); }
+  .hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--ink-mid);
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #1f352c; transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid var(--ink-faint);
+    color: var(--ink-mid);
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--ink-mid); color: var(--ink); transform: translateY(-1px); }
+  .hero-bg-text {
+    position: absolute; right: -1rem; top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--serif); font-size: clamp(8rem, 20vw, 18rem);
+    color: rgba(26,25,23,0.03); line-height: 1;
+    user-select: none; pointer-events: none; white-space: nowrap;
+  }
+
+  /* CREDIBILITY BAR */
+  #credibility { padding: 4rem 0; border-bottom: 1px solid var(--rule); }
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0; }
+  .stat-item {
+    padding: 2rem 2rem;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: var(--serif); font-size: 2.4rem; color: var(--ink); line-height: 1; margin-bottom: 0.4rem; }
+  .stat-num em { font-style: italic; color: var(--accent); }
+  .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); font-weight: 400; }
+  .logo-strip {
+    display: flex; align-items: center; justify-content: center;
+    gap: 3rem; flex-wrap: wrap;
+    padding: 2.5rem 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .logo-pill {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-light);
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--ink-faint);
+    border-radius: 2px;
+  }
+
+  /* SECTION HEADERS */
+  .section-header { margin-bottom: 4rem; }
+  .section-eyebrow {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--accent-mid); font-weight: 500; margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-eyebrow::before { content: ''; width: 1.5rem; height: 1px; background: var(--accent-mid); display: block; }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15; letter-spacing: -0.02em; color: var(--ink);
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  /* BOARD THESIS */
+  .thesis-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+  .thesis-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 2.5rem 2rem;
+  }
+  .thesis-num {
+    font-family: var(--serif); font-size: 3.5rem; color: var(--ink-faint);
+    line-height: 1; margin-bottom: 1.5rem;
+  }
+  .thesis-heading { font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
+  .thesis-body { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.7; }
+  .thesis-pullquote {
+    grid-column: 1 / -1;
+    border-top: 3px solid var(--accent);
+    padding: 3rem 2.5rem;
+    background: var(--accent-light);
+    margin-top: 2px;
+  }
+  .pullquote-text {
+    font-family: var(--serif); font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    line-height: 1.45; color: var(--accent); font-style: italic;
+    max-width: 700px;
+  }
+
+  /* VALUE PROP */
+  .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; }
+  .value-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 2rem;
+    transition: border-color 0.2s;
+  }
+  .value-card:hover { border-color: var(--accent-mid); }
+  .value-icon {
+    width: 2rem; height: 2rem; border-radius: 2px;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .value-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+  .value-heading { font-size: 0.95rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+  .value-body { font-size: 0.85rem; color: var(--ink-mid); line-height: 1.65; }
+  .value-closing {
+    margin-top: 3rem; padding: 1.5rem 2rem;
+    border-left: 3px solid var(--accent);
+    background: var(--paper-card);
+    font-size: 0.9rem; color: var(--ink-mid); font-style: italic;
+  }
+
+  /* IMPACT */
+  .impact-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; margin-bottom: 1.5px; }
+  .impact-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .impact-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%; background: var(--accent);
+  }
+  .impact-tag {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--accent-mid); font-weight: 500; margin-bottom: 1rem;
+    background: var(--accent-light); display: inline-block;
+    padding: 0.25rem 0.6rem; border-radius: 2px;
+  }
+  .impact-num { font-family: var(--serif); font-size: 3rem; color: var(--ink); line-height: 1; margin-bottom: 0.5rem; }
+  .impact-desc { font-size: 0.85rem; color: var(--ink-mid); margin-bottom: 0.75rem; }
+  .impact-context { font-size: 0.78rem; color: var(--ink-light); }
+  .impact-secondary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5px; }
+  .impact-mini {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 1.5rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+  .impact-mini-num { font-family: var(--serif); font-size: 1.5rem; color: var(--accent); min-width: fit-content; line-height: 1.2; }
+  .impact-mini-text { font-size: 0.82rem; color: var(--ink-mid); line-height: 1.55; }
+
+  /* CAREER */
+  .timeline { position: relative; }
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 7.5rem; top: 0; bottom: 0;
+    width: 1px; background: var(--rule);
+  }
+  .timeline-item { display: flex; gap: 0; margin-bottom: 0; }
+  .timeline-date {
+    width: 7.5rem; flex-shrink: 0; padding: 2rem 2rem 2rem 0;
+    font-size: 0.78rem; color: var(--ink-light); text-align: right;
+    padding-top: 2.15rem;
+  }
+  .timeline-dot {
+    width: 1px; position: relative; flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .timeline-dot::after {
+    content: ''; position: absolute; top: 2.35rem;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--paper-card);
+    border: 2px solid var(--accent); z-index: 1;
+    left: 50%; transform: translateX(-50%);
+  }
+  .timeline-content {
+    flex: 1; padding: 2rem 0 2rem 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .timeline-item:last-child .timeline-content { border-bottom: none; }
+  .timeline-company { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-mid); font-weight: 500; margin-bottom: 0.35rem; }
+  .timeline-role { font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+  .timeline-impact { font-size: 0.88rem; color: var(--ink-mid); }
+
+  /* BOARD FOCUS */
+  .focus-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+  .focus-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 2.5rem 2rem;
+  }
+  .focus-num { font-family: var(--serif); font-size: 1.5rem; color: var(--accent); margin-bottom: 1.25rem; }
+  .focus-heading { font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
+  .focus-body { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.7; }
+  .focus-target {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem;
+  }
+  .focus-pill {
+    font-size: 0.78rem; padding: 0.35rem 0.9rem;
+    border: 1px solid var(--ink-faint); border-radius: 2px;
+    color: var(--ink-mid); background: var(--paper-card);
+  }
+
+  /* TESTIMONIALS */
+  .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .testimonial-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 2.5rem;
+  }
+  .testimonial-mark { font-family: var(--serif); font-size: 4rem; color: var(--accent-light); line-height: 0.8; margin-bottom: 1rem; }
+  .testimonial-text { font-size: 0.95rem; color: var(--ink-mid); line-height: 1.75; font-style: italic; margin-bottom: 1.5rem; }
+  .testimonial-attr { display: flex; align-items: center; gap: 0.75rem; }
+  .attr-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--accent-light); display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 500; color: var(--accent); flex-shrink: 0;
+  }
+  .attr-name { font-size: 0.85rem; font-weight: 500; color: var(--ink); }
+  .attr-title { font-size: 0.78rem; color: var(--ink-light); }
+
+  /* CONTACT */
+  #contact { background: var(--ink); color: #fff; }
+  #contact .section-eyebrow { color: var(--accent-mid); }
+  #contact .section-eyebrow::before { background: var(--accent-mid); }
+  #contact .section-title { color: #fff; }
+  #contact .section-title em { color: #9fc4b0; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-intro { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 2rem; }
+  .contact-method { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .contact-method-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); font-weight: 400; width: 60px; }
+  .contact-method a, .contact-method span { font-size: 0.9rem; color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+  .contact-method a:hover { color: #fff; text-decoration: underline; }
+  .contact-form input, .contact-form textarea {
+    width: 100%; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 2px; color: #fff;
+    padding: 0.75rem 1rem; font-family: var(--sans);
+    font-size: 0.9rem; margin-bottom: 1rem;
+    transition: border-color 0.2s; outline: none;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: rgba(255,255,255,0.4); }
+  .contact-form textarea { height: 120px; resize: vertical; }
+  .btn-white {
+    background: #fff; color: var(--ink);
+    padding: 0.85rem 2rem; border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-white:hover { background: #e8e6e0; transform: translateY(-1px); }
+  footer {
+    background: #0f0f0d; padding: 2rem max(2rem, calc(50% - 560px));
+    display: flex; align-items: center; justify-content: space-between;
+    color: rgba(255,255,255,0.3); font-size: 0.78rem;
+  }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+
+  @media (max-width: 768px) {
+    .thesis-grid, .focus-grid { grid-template-columns: 1fr; }
+    .impact-featured, .contact-grid, .testimonial-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 0; }
+    .timeline-date { display: none; }
+    .timeline-content { padding-left: 1.5rem; }
+    .timeline-dot::after { left: 0; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Soham Ganatra</a>
+  <ul class="nav-links">
+    <li><a href="#thesis">Thesis</a></li>
+    <li><a href="#value">Value</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#focus">Focus</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-text">Board</div>
+  <div class="hero-eyebrow fade-up">Independent Director Aspirant</div>
+  <h1 class="hero-name fade-up delay-1">Soham<br><em>Ganatra</em></h1>
+  <p class="hero-tagline fade-up delay-2">10 years building margin resilience through AI-driven self-serve transformation in SaaS and e-commerce — now bringing that discipline to the boardroom.</p>
+  <div class="hero-ctas fade-up delay-3">
+    <a href="#impact" class="btn-primary">View Board Profile</a>
+    <a href="#contact" class="btn-outline">Get in Touch</a>
+  </div>
+</section>
+
+<!-- CREDIBILITY BAR -->
+<section id="credibility">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num">10<em>+</em></div>
+        <div class="stat-label">Years in SaaS & e-commerce</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">$2.8<em>M</em></div>
+        <div class="stat-label">GMV delivered, Year 1</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">80<em>%</em></div>
+        <div class="stat-label">Automation achieved</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">75<em>%</em></div>
+        <div class="stat-label">Fulfillment time reduction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">$72<em>K</em></div>
+        <div class="stat-label">Annual savings, single tool</div>
+      </div>
+    </div>
+    <div class="logo-strip">
+      <span class="logo-pill">Wolken Software</span>
+      <span class="logo-pill">Nivoda</span>
+      <span class="logo-pill">Newfold Digital</span>
+      <span class="logo-pill">Philips</span>
+      <span class="logo-pill">Endurance International</span>
+    </div>
+  </div>
+</section>
+
+<!-- BOARD THESIS -->
+<section id="thesis">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">My conviction</div>
+      <h2 class="section-title">Board <em>thesis</em></h2>
+    </div>
+    <div class="thesis-grid">
+      <div class="thesis-card">
+        <div class="thesis-num">01</div>
+        <div class="thesis-heading">Margin resilience is structural</div>
+        <div class="thesis-body">Sustainable margin is not created through reactive cost cutting. It is built by embedding self-service architecture, automation, and cost-to-serve accountability into the operating model before pressure arrives.</div>
+      </div>
+      <div class="thesis-card">
+        <div class="thesis-num">02</div>
+        <div class="thesis-heading">Boards must audit the operating model</div>
+        <div class="thesis-body">Beyond topline growth, boards should evaluate whether management has embedded the right governance mechanisms — AI-enabled efficiency, clear ownership of input metrics, and systems that improve operating leverage over time.</div>
+      </div>
+      <div class="thesis-card">
+        <div class="thesis-num">03</div>
+        <div class="thesis-heading">EBITDA durability is an output</div>
+        <div class="thesis-body">Disciplined capital allocation and innovation investments tied to measurable economic impact are the drivers. In the boardroom, I prioritise structural efficiency over short-term expansion and challenge management to prove the economics of every initiative.</div>
+      </div>
+      <div class="thesis-pullquote">
+        <div class="pullquote-text">"Sustainable enterprise value comes from systems that scale in both growth cycles and downturns."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I BRING -->
+<section id="value">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Board value</div>
+      <h2 class="section-title">What I bring to <em>the board</em></h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 16 16"><polyline points="1,12 5,7 9,10 15,3"/></svg>
+        </div>
+        <div class="value-heading">Automation-led margin improvement</div>
+        <div class="value-body">Track record of replacing manual workflows with self-serve tooling that generates operating leverage without proportional headcount growth.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
+        </div>
+        <div class="value-heading">Digital platform governance</div>
+        <div class="value-body">Deep experience designing governance mechanisms for marketplace and SaaS platforms — availability, supplier adoption, monetisation pathways, and product scalability.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><polyline points="8,5 8,8 11,8"/></svg>
+        </div>
+        <div class="value-heading">Product strategy</div>
+        <div class="value-body">Multi-year roadmap ownership across B2B SaaS and e-commerce platforms, balancing commercial priorities with operational feasibility and long-term scalability.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 16 16"><line x1="8" y1="1" x2="8" y2="15"/><line x1="1" y1="8" x2="15" y2="8"/></svg>
+        </div>
+        <div class="value-heading">Operational scalability</div>
+        <div class="value-body">Designed operating models that supported 100% year-on-year order growth without additional headcount — evidence that scale can be engineered, not just staffed.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 16 16"><polygon points="8,1 10,6 15,6 11,9 13,15 8,11 3,15 5,9 1,6 6,6"/></svg>
+        </div>
+        <div class="value-heading">AI-enabled efficiency</div>
+        <div class="value-body">Shipped AI/ML-led initiatives — demand forecasting, OCR automation, self-serve bots — with measurable outcomes tied directly to cost reduction and revenue impact.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 16 16"><circle cx="5" cy="5" r="3"/><circle cx="11" cy="11" r="3"/><line x1="7" y1="7" x2="9" y2="9"/></svg>
+        </div>
+        <div class="value-heading">Stakeholder navigation</div>
+        <div class="value-body">Regularly aligned across 15+ cross-functional stakeholders, presented in monthly C-suite reviews, and influenced roadmap, headcount, and organisational decisions.</div>
+      </div>
+    </div>
+    <div class="value-closing">
+      Most relevant for SaaS, PE-backed digital businesses, and marketplace platforms at growth or transformation inflection points.
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Proof of work</div>
+      <h2 class="section-title">Signature <em>impact</em></h2>
+    </div>
+    <div class="impact-featured">
+      <div class="impact-card">
+        <div class="impact-tag">Marketplace growth · Nivoda</div>
+        <div class="impact-num">$2.8M</div>
+        <div class="impact-desc">GMV generated in Year 1 of Fast Delivery program across two regions.</div>
+        <div class="impact-context">Led end-to-end design, development, and go-to-market. Reduced fulfillment time by 75% through lean process redesign and agile cross-functional execution.</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-tag">Operating leverage · Nivoda</div>
+        <div class="impact-num">80%</div>
+        <div class="impact-desc">Operational automation enabling 100% YoY order growth with zero headcount increase.</div>
+        <div class="impact-context">Self-serve SaaS tooling replaced manual workflows. Demonstrated that operational scale is an engineering decision, not a hiring decision.</div>
+      </div>
+    </div>
+    <div class="impact-secondary">
+      <div class="impact-mini">
+        <div class="impact-mini-num">95%</div>
+        <div class="impact-mini-text">Reduction in accounts payable error rates via OCR-based automation</div>
+      </div>
+      <div class="impact-mini">
+        <div class="impact-mini-num">66%</div>
+        <div class="impact-mini-text">Manual workload cut through self-serve SaaS order confirmation tool</div>
+      </div>
+      <div class="impact-mini">
+        <div class="impact-mini-num">30%</div>
+        <div class="impact-mini-text">YoY improvement in out-of-stock rates via KPI-led product prioritisation</div>
+      </div>
+      <div class="impact-mini">
+        <div class="impact-mini-num">$72K</div>
+        <div class="impact-mini-text">Annual savings generated by a single self-serve operational tool</div>
+      </div>
+      <div class="impact-mini">
+        <div class="impact-mini-num">20%</div>
+        <div class="impact-mini-text">Supplier engagement increase within 6 months of SaaS platform launch</div>
+      </div>
+      <div class="impact-mini">
+        <div class="impact-mini-num">65%</div>
+        <div class="impact-mini-text">SKU sell-through rate improvement via AI/ML demand forecasting dashboard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Career arc</div>
+      <h2 class="section-title">The path to <em>the boardroom</em></h2>
+    </div>
+    <p style="font-size:0.95rem;color:var(--ink-mid);max-width:580px;margin-bottom:3rem;font-style:italic;">Every role deepened one conviction: how a business is built operationally determines whether its growth is profitable.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2025 – Present</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Wolken Software · Bengaluru</div>
+          <div class="timeline-role">Senior Product Manager</div>
+          <div class="timeline-impact">Owning customer onboarding transformation — AI-assisted self-serve architecture for mid-market and SMB, turning onboarding into a lever for adoption, efficiency, and account growth.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2024 – 2025</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Nivoda · Remote</div>
+          <div class="timeline-role">Senior Product Manager</div>
+          <div class="timeline-impact">Defined multi-year SaaS roadmap for 1,200+ suppliers. Delivered $2.8M GMV in Year 1, 75% faster fulfillment, and AI-led initiatives with measurable cost and revenue impact. Established $100K ARR monetisation pathway.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2022 – 2023</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Nivoda · Remote</div>
+          <div class="timeline-role">Product Manager</div>
+          <div class="timeline-impact">Built self-serve operational tooling that cut manual workload by 66% and saved $72K annually. Reduced out-of-stock rates by 30% YoY. Mentored two Product Managers; introduced structured ownership mechanisms.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2019 – 2022</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Newfold Digital / Endurance International</div>
+          <div class="timeline-role">Associate Product Manager</div>
+          <div class="timeline-impact">Led platform integrations and compliance features for 50K+ active B2B users. Built a strong foundation in regulated feature delivery, cross-functional execution, and product governance.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2016 – 2017</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Philips · Pune</div>
+          <div class="timeline-role">Contract Technical Writer</div>
+          <div class="timeline-impact">Authored technical documentation and built dashboards analysing repair data to inform product improvement — an early grounding in structured, evidence-based decision-making.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOARD FOCUS -->
+<section id="focus">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Board focus</div>
+      <h2 class="section-title">Where I add most <em>value</em></h2>
+    </div>
+    <div class="focus-target">
+      <span class="focus-pill">SaaS businesses</span>
+      <span class="focus-pill">PE-backed digital platforms</span>
+      <span class="focus-pill">Marketplace & e-commerce</span>
+      <span class="focus-pill">Growth stage companies</span>
+      <span class="focus-pill">Transformation mandates</span>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-num">I</div>
+        <div class="focus-heading">Scale with cost discipline</div>
+        <div class="focus-body">I push management teams to demonstrate that their operating model has built-in leverage — asking whether growth adds proportional cost or whether automation and self-serve architecture are doing the heavy lifting. Headcount ratios, cost-to-serve trends, and automation coverage are the metrics I track.</div>
+      </div>
+      <div class="focus-card">
+        <div class="focus-num">II</div>
+        <div class="focus-heading">AI & automation governance</div>
+        <div class="focus-body">I bring a practitioner's lens to AI adoption — having shipped demand forecasting, OCR automation, and self-serve AI bots. In the boardroom, I help management tie AI investment to measurable economic outcomes and build the right governance for responsible deployment.</div>
+      </div>
+      <div class="focus-card">
+        <div class="focus-num">III</div>
+        <div class="focus-heading">Platform resilience & liquidity</div>
+        <div class="focus-body">For marketplace and SaaS platforms, I assess whether supplier adoption, platform availability, and self-serve coverage are strong enough to sustain performance through both demand spikes and downturns — the resilience indicators that growth metrics alone miss.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Voices</div>
+      <h2 class="section-title">Those who've worked <em>alongside</em></h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-mark">"</div>
+        <div class="testimonial-text">Soham has an unusual ability to translate operational complexity into economic clarity. He consistently brought a governance-led perspective to product decisions that pushed our thinking beyond features into business fundamentals.</div>
+        <div class="testimonial-attr">
+          <div class="attr-avatar">CL</div>
+          <div>
+            <div class="attr-name">Cross-functional leader</div>
+            <div class="attr-title">Marketplace platform, 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-mark">"</div>
+        <div class="testimonial-text">What sets Soham apart is his insistence on tying every initiative to a measurable outcome. He doesn't just build products — he builds operating leverage. That's a rare and valuable perspective to have in a room where strategic decisions are made.</div>
+        <div class="testimonial-attr">
+          <div class="attr-avatar">SL</div>
+          <div>
+            <div class="attr-name">Senior leader</div>
+            <div class="attr-title">SaaS organisation, 2023</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Invite the conversation</div>
+      <h2 class="section-title">Let's <em>connect</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-intro">Available for Independent Director, advisory, and board observer roles in SaaS and digital businesses. If you're building a board that values operating discipline, AI governance, and margin resilience — I'd like to hear from you.</p>
+        <div class="contact-method">
+          <span class="contact-method-label">LinkedIn</span>
+          <a href="https://linkedin.com/in/sohamganatra" target="_blank">linkedin.com/in/sohamganatra</a>
+        </div>
+        <div class="contact-method">
+          <span class="contact-method-label">Location</span>
+          <span>Bengaluru, India · Open to remote mandates</span>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="#" class="btn-white" style="font-size:0.8rem;">Download board bio (PDF)</a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <input type="text" placeholder="Your name">
+        <input type="text" placeholder="Company & role">
+        <input type="email" placeholder="Email address">
+        <textarea placeholder="Tell me about the opportunity or how I can help..."></textarea>
+        <button class="btn-white" onclick="alert('Thank you — Soham will be in touch.')">Send message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Soham Ganatra</span>
+  <a href="https://linkedin.com/in/sohamganatra" target="_blank">LinkedIn</a>
+</footer>
+
+</body>
+</html>
